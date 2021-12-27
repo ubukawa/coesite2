@@ -39,6 +39,6 @@
     "uuid": "^8.3.1",
     "windows-iana": "^5.0.2",
     "winston": "^3.3.3",
-    "winston-daily-rotate-file": "^5.5.5"
+    "winston-daily-rotate-file": "^4.5.5"
   }
 }
