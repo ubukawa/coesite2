@@ -48,8 +48,8 @@ logger.stream = {
 }
 // logger until here
 
-const app = express()
 var authRouter = require('./routes/auth') //before app
+const app = express()
 
 //(before indexRouter) from here
 // In-memory storage of logged-in users
@@ -90,7 +90,7 @@ var VTORouter = require('./routes/VT-open') //test 0322
 // NOTE: Uses default in-memory session store, which is not
 // suitable for production
 app.use(session({
-    secret: process.env.OAUTH_APP_SECRET,
+    secret: process.env.OAUTH_CLIENT_SECRET,
     resave: false,
     saveUninitialized: false,
     unset: 'destroy'
