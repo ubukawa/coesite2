@@ -50,8 +50,6 @@ logger.stream = {
 
 var authRouter = require('./routes/auth') //before app
 const app = express()
-
-//(before indexRouter) from here
 // In-memory storage of logged-in users
 // For demo purposes only, production apps should store
 // this in a reliable storage
@@ -60,9 +58,9 @@ app.locals.users = {};
 // MSAL config
 const msalConfig = {
     auth: {
-        clientId: process.env.OAUTH_APP_ID,
+        clientId: process.env.OAUTH_CLIENT_ID,
         authority: process.env.OAUTH_AUTHORITY,
-        clientSecret: process.env.OAUTH_APP_SECRET
+        clientSecret: process.env.OAUTH_CLIENT_SECRET
     },
     system: {
         loggerOptions: {
@@ -78,7 +76,6 @@ const msalConfig = {
 // Create msal application object
 app.locals.msalClient = new msal.ConfidentialClientApplication(msalConfig);
 //(before indexRouter) until here
-
 
 var indexRouter = require('./routes/index')
 var usersRouter = require('./routes/users')
