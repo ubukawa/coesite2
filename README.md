@@ -10,7 +10,7 @@ npm install
 npm start
 ```
 ## Run
-* Config setting
+### Config setting
 Edit .env and config/default.hjson to provide necessary confit setting.
 
 ```
@@ -21,7 +21,7 @@ OAUTH_SCOPES='user.read'
 OAUTH_AUTHORITY=https://login.microsoftonline.com/(your place)/
 ```
 
-```hjson:example
+```
 {
  morganFormat: tiny
  htdocsPath: public
@@ -39,7 +39,15 @@ OAUTH_AUTHORITY=https://login.microsoftonline.com/(your place)/
  mbtilesDir: mbtiles
 }
 ```
+### Start server
+node app.js  
+ or  
+./pmserve.sh
 
+To stop, run ./pmstop.sh  
+(Please make sure that you have the permission to execute sh scripts.)
+
+sh containts sudo because I needed it in my own environment.
 
 ## Structure
 top page will be https://(your domain)/unvt
