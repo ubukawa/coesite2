@@ -20,7 +20,8 @@ router.get('/signin',
         message: 'Error getting auth URL',
         debug: JSON.stringify(error, Object.getOwnPropertyNames(error))
       });
-      res.redirect('/');
+      //res.redirect('/');
+      res.redirect('/unvt');
     }
   }
 );
@@ -56,7 +57,8 @@ router.get('/callback',
       });
     }
 
-    res.redirect('/');
+    //res.redirect('/');
+    res.redirect('/unvt');
   }
 );
 
@@ -81,7 +83,8 @@ router.get('/signout',
 
     // Destroy the user's session
     req.session.destroy(function (err) {
-      res.redirect('/');
+      //res.redirect('/');
+      res.redirect('/unvt/');
     });
   }
 );

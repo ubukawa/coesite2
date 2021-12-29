@@ -121,7 +121,7 @@ app.use(function (req, res, next) {
 
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'))
+app.set('unvt/views', path.join(__dirname, 'views'))
 app.set('view engine', 'hbs')
 app.use(morgan(morganFormat, {
     stream: logger.stream
@@ -132,13 +132,24 @@ app.use(cookieParser())
 app.use(cors())
 
 //app.use(express.static(path.join(__dirname, htdocsPath)))
-app.use('/unvt', express.static(path.join(__dirname, htdocsPath)))
+
+app.use('/unvt', express.static('public'))
 app.use('/unvt/', indexRouter)
 app.use('/unvt/auth', authRouter) //after app.use('/', indexRouter)
 app.use('/unvt/users', usersRouter)
 app.use('/unvt/map', mapRouter)
 app.use('/unvt/VT', VTRouter)
 app.use('/unvt/VT-open', VTORouter)
+
+/*
+app.use(express.static('public'))
+app.use('/', indexRouter)
+app.use('/auth', authRouter) //after app.use('/', indexRouter)
+app.use('/users', usersRouter)
+app.use('/map', mapRouter)
+app.use('/VT', VTRouter)
+app.use('/VT-open', VTORouter)
+*/
 
 // error handler
 app.use((req, res) => {
