@@ -50,7 +50,8 @@ To stop, run ./pmstop.sh
 sh containts sudo because I needed it in my own environment.
 
 ## Structure
-top page will be https://(your domain)/unvt
+top page will be https://(your domain)/unvt  
+Tile will be served from https://(your domain)/unvt/VT/zxy/{t}/{z}/{x}/{y}.pbf  
 
 ## Tips
 If your node is not allow to use port 443, try  

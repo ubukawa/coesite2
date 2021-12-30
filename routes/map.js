@@ -7,7 +7,8 @@ router.get('/',
 
 if (!req.session.userId) {
   // Redirect unauthenticated requests to home page
-    res.redirect('/')
+    res.redirect('/unvt')
+    //res.redirect('/')
     } else {
   let params = {
     active: { home: true }
