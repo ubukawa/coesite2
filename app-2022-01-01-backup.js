@@ -2,7 +2,6 @@ require('dotenv').config()
 
 //for Server fnction
 const session = require('express-session')
-const MySQLStore = require('express-mysql-session')(session) //Added for session store in mysql
 const flash = require('connect-flash')
 const msal = require('@azure/msal-node')
 var createError = require('http-errors')
@@ -84,7 +83,6 @@ var mapRouter = require('./routes/map') //test 0104
 var VTRouter = require('./routes/VT') //test 0308
 var VTORouter = require('./routes/VT-open') //test 0322
 
-/*
 // Session middleware
 // NOTE: Uses default in-memory session store, which is not
 // suitable for production
@@ -94,29 +92,7 @@ app.use(session({
     saveUninitialized: false,
     unset: 'destroy'
 }))
-
 // note: session will be replaceid with mysql
-*/
-
-//session with mysql (from here)
-const mysqlOptions ={
-    host: 'localhost',
-    port: 3306,
-    user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD, 
-    database: process.env.MYSQL_DATABASE
-}
-const sessionStore = new MySQLStore(mysqlOptions)
-const sess = {
-    secret: process.env.OAUTH_CLIENT_SECRET,
-    cookie: {maxAge: 60000}, //16h40m　
-    store: sessionStore,
-    resave: false,
-    saveUninitialized: false
-}
-//sess.cookie.secure = true //for production
-app.use(session(sess))
-//session with mysql (until here)
 
 // Flash middleware
 app.use(flash())
