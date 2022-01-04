@@ -109,10 +109,10 @@ const mysqlOptions ={
 const sessionStore = new MySQLStore(mysqlOptions)
 const sess = {
     secret: process.env.OAUTH_CLIENT_SECRET,
-    cookie: {maxAge: 60000}, //16h40m　
+    cookie: {maxAge: 60000}, //16h40m
     store: sessionStore,
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false //make it true if necessary
 }
 //sess.cookie.secure = true //for production
 app.use(session(sess))
