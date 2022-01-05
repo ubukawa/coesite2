@@ -109,9 +109,9 @@ const mysqlOptions ={
 const sessionStore = new MySQLStore(mysqlOptions)
 const sess = {
     secret: process.env.OAUTH_CLIENT_SECRET,
-    cookie: {maxAge: 60000}, //16h40m
+    cookie: {maxAge: 60000000}, //16h40m (mili-second)
     store: sessionStore,
-    resave: false,
+    resave: false, //make it true if necessary
     saveUninitialized: false //make it true if necessary
 }
 //sess.cookie.secure = true //for production
@@ -153,6 +153,15 @@ app.use(morgan(morganFormat, {
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(cookieParser())
+/*
+// for credential
+const corsOption = {
+ origin: '*',
+ credentials: true
+}
+app.use(cors(corsOption)) 
+// for credential
+*/
 app.use(cors())
 
 //app.use(express.static(path.join(__dirname, htdocsPath)))
