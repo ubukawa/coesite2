@@ -82,6 +82,7 @@ var indexRouter = require('./routes/index')
 var usersRouter = require('./routes/users')
 var mapRouter = require('./routes/map') //test 0104
 var VTRouter = require('./routes/VT') //test 0308
+//var VTRouter = require('./routes/VT-r') //referer test
 var VTORouter = require('./routes/VT-open') //test 0322
 
 /*
