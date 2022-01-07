@@ -4,7 +4,7 @@
  "copyrightText": "NaturalEarth",
  "capabilities": "TilesOnly,Tilemap",
  "type": "indexedFlat",
- "tilemap":"tilemap",
+ "tileMap":"tilemap",
  "defaultStyles": "resources/styles",
  "tiles": [
   "https://ubukawa.github.io/vt-test/ne-test/{z}/{x}/{y}.pbf"
