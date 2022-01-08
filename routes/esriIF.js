@@ -85,7 +85,7 @@ router.get(`/:t/VectorTileServer/tilemap/:z/:row/:column/:width/:height`,  //nee
       }else{
         tmapdata = tmapdataFull[5]
       }
-    res.json({ adjusted: false , location: {left: row, top: column, width: width, height: height}, data: tmapdata})
+    res.json({ adjusted: false , location: {left: column, top: row, width: width, height: height}, data: tmapdata})
     busy = false
   } else {
     res.status(404).send(`tilemap not found: esriIF/${t}/VectorTileServer/tilemap/${z}/${row}/${column}/${width}/${height}`)
