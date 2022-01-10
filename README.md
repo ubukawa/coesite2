@@ -37,6 +37,14 @@ OAUTH_AUTHORITY=https://login.microsoftonline.com/(your place)/
  }
  defaultZ: 6
  mbtilesDir: mbtiles
+ esriDir: esri
+ esri-tilemap-min:{
+  ne-test: 0
+  }
+ esri-tilemap-max:{
+  ne-test: 5
+  }
+
 }
 ```
 ### Start server
